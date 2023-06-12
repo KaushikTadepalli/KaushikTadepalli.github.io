@@ -1,0 +1,9 @@
+body{
+    background-color: black;
+}
+
+.p1{
+    color:white;
+    font-family: "Space Mono", monospace;
+    font-size: 5rem;
+}

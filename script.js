@@ -58,4 +58,4 @@ document.querySelectorAll("nav ul li a").forEach((anchor) => {
   });
 });
 
-document.body.style.zoom="110%"
+document.body.style.zoom="115%"

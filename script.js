@@ -57,3 +57,5 @@ document.querySelectorAll("nav ul li a").forEach((anchor) => {
     swiper.slideTo(slideIndex);
   });
 });
+
+document.body.style.zoom="110%"

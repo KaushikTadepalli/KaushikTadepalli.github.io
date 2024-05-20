@@ -156,8 +156,6 @@ body article {
   color: white;
   font-family: "Figtree", system-ui;
   2font-variation-settings: "EDPT" 100, "EHLT" 24;
-  background-color: #111;
-  border-radius: 100%;
 }
 
 .swiper .swiper-slide h4 {
@@ -183,9 +181,9 @@ body article {
   color: #999;
   margin: 0;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: flex;
   -webkit-box-orient: vertical;
-  overflow: hidden;
+  overflow: shown;
 }
 
 .swiper .swiper-slide a {

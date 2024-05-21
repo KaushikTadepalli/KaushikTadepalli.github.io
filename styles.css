@@ -67,7 +67,7 @@ body article {
 
 .swiper .swiper-slide {
   position: relative;
-  top: -25px;
+  top: -65px;
   height: auto;
   display: flex;
   flex-direction: column;

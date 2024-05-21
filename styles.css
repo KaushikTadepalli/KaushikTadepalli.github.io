@@ -5,6 +5,7 @@
 }
 
 body {
+  zoom: 1.2;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -53,7 +54,6 @@ body article {
   top: -50%;
   width: 200%;
   height: 200%;
-  background-image: url("https://rb.gy/wk4c6n");
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
@@ -65,7 +65,8 @@ body article {
 
 .swiper .swiper-slide {
   position: relative;
-  height: auto;
+  margin-bottom: 0; /* Remove any extra margin */
+  padding-bottom: 0; /* Remove any extra padding */
   display: flex;
   flex-direction: column;
   align-items: flex-start;

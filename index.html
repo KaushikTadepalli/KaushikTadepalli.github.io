@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CHANGE Your Name -->
+  <title>Kaushik Tadepalli</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" href="favicon.png" type="image/png">
+</head>
+
+<body>
+
+  <!-- Top Navigation -->
+  <header class="top-nav">
+    <a href="index.html" class="logo">
+      <img src="logo.png" alt="KT Logo" id="logo-img">
+    </a>
+    <nav class="nav-links">
+      <a href="#about">about</a>
+      <a href="projects.html">projects</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </header>
+
+  <!-- Main Content Area -->
+  <div class="main-content">
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="about-content">
+        <div class="about-text">
+          <!-- MODIFIED H1: Use data attributes and <br> for two lines -->
+          <!-- CHANGE data-first, data-last, and text inside h1 -->
+          <h1 id="name-heading" data-first="Kaushik" data-last="Tadepalli">
+            Kaushik<br> Tadepalli
+          </h1>
+          <!-- CHANGE Subtitle -->
+          <p class="subtitle">Senior at Los Gatos High School</p>
+          <!-- CHANGE About description -->
+          <p class="about-description">
+            Hi! I'm Kaushik, a maker and aspiring engineer.
+          </p>
+        </div>
+        <div class="about-image">
+          <!-- CHANGE src to your portrait, alt text -->
+          <img src="https://i.postimg.cc/SQrGvR9D/me.jpg" alt="Kaushik Tadepalli Portrait" id="portrait-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="projects-list">
+        <a href="#" class="project-item" data-project-id="proj2">
+          <div class="project-thumbnail">
+            <img src="https://imgur.com/ZjhPTWQ.jpg" alt="Inhibitor">
+          </div>
+          <div class="project-info">
+            <span class="project-title">Inhibitor</span>
+            <span class="project-desc">My first ever combat robot to compete at WCCRL 2025.</span>
+          </div>
+        </a>
+        <a href="#" class="project-item" data-project-id="proj3">
+          <div class="project-thumbnail">
+            <img src="https://i.imgur.com/zm0xKUw.jpeg" alt="Vantage">
+          </div>
+          <div class="project-info">
+            <span class="project-title">Vantage</span>
+            <span class="project-desc">Team 972's 2025 FRC robot.</span>
+          </div>
+        </a>
+        <a href="#" class="project-item" data-project-id="proj1">
+          <div class="project-thumbnail">
+            <img src="https://i.imgur.com/VX4kvA4.jpeg" alt="Scimitar">
+          </div>
+          <div class="project-info">
+            <span class="project-title">Scimitar</span>
+            <span class="project-desc">LW-PLA 3D printed flying wing</span>
+          </div>
+        </a>
+        <a href="#" class="project-item" data-project-id="proj6">
+          <div class="project-thumbnail">
+            <img src="https://i.imgur.com/kB00Os8.jpeg" alt="Warehouse Cart">
+          </div>
+          <div class="project-info">
+            <span class="project-title">Warehouse Cart</span>
+            <span class="project-desc">A modular latching cart for Omron LD90 AMRs.</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="view-all">
+        <a href="projects.html">View all projects →</a>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact-links">
+        <!-- CHANGE email address -->
+        <a href="mailto:kaushiktadepalli@gmail.com" aria-label="Email me">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+        <!-- CHANGE LinkedIn URL -->
+        <a href="https://www.linkedin.com/in/kaushik-tadepalli-17778a359/" target="_blank" rel="noopener noreferrer"
+          aria-label="View my LinkedIn profile">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <!-- CHANGE GitHub URL -->
+        <a href="https://github.com/KaushikTadepalli" target="_blank" rel="noopener noreferrer"
+          aria-label="View my GitHub profile">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </div>
+    </section>
+  </div><!-- End Main Content Area -->
+
+  <!-- Project Detail Modal (Hidden by default) -->
+  <div id="project-modal" class="modal">
+    <div class="modal-content">
+      <button class="close-btn">&minus;</button>
+      <div id="modal-body">
+        <!-- Project details will be loaded here by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

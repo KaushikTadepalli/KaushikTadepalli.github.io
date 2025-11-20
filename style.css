@@ -6,15 +6,23 @@
 }
 
 :root {
-    --bg-color: #1e1e1e; /* Very dark background (Cursor-like) */
-    --text-color: #cccccc; /* Light grey text */
-    --primary-color: #ffffff; /* White for key elements */
-    --card-bg: #252526;   /* Dark gray for cards/sidebar */
-    --border-color: #3e3e42; /* Dark gray borders */
+    --bg-color: #1e1e1e;
+    /* Very dark background (Cursor-like) */
+    --text-color: #cccccc;
+    /* Light grey text */
+    --primary-color: #ffffff;
+    /* White for key elements */
+    --card-bg: #252526;
+    /* Dark gray for cards/sidebar */
+    --border-color: #3e3e42;
+    /* Dark gray borders */
     --hover-bg: #2a2d2e;
-    --sidebar-width: 180px; /* Sidebar width variable */
-    --active-color: #5dade2; /* Lighter blue accent */
-    --accent-blue: #5dade2; /* Consistent lighter blue accent */
+    --sidebar-width: 180px;
+    /* Sidebar width variable */
+    --active-color: #5dade2;
+    /* Lighter blue accent */
+    --accent-blue: #5dade2;
+    /* Consistent lighter blue accent */
 }
 
 html {
@@ -214,7 +222,9 @@ section {
     margin-bottom: 3rem;
 }
 
-h1, h2 { /* Section headings */
+h1,
+h2 {
+    /* Section headings */
     font-size: 2rem;
     color: var(--primary-color);
     margin-bottom: 3rem;
@@ -336,12 +346,12 @@ h1, h2 { /* Section headings */
     padding-bottom: 4rem;
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 0.8s forwards;
-    text-align: left;
+    text-align: center;
 }
 
 #contact h2 {
     margin-bottom: 2rem;
-    text-align: left;
+    text-align: center;
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 0.9s forwards;
 }
@@ -349,7 +359,7 @@ h1, h2 { /* Section headings */
 .contact-links {
     display: flex;
     gap: 2rem;
-    justify-content: flex-start;
+    justify-content: center;
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 1s forwards;
 }
@@ -443,7 +453,8 @@ footer {
 #modal-body {
     flex: 1;
     overflow-y: auto;
-    padding-right: 20px; /* Space for scrollbar */
+    padding-right: 20px;
+    /* Space for scrollbar */
 }
 
 #modal-body h2 {
@@ -538,38 +549,46 @@ footer {
 /* Responsive Adjustments */
 @media (max-width: 992px) {
     .main-content {
-         padding: 5rem 1.5rem 2rem;
-     }
+        padding: 5rem 1.5rem 2rem;
+    }
+
     .about-content {
         flex-direction: column;
         text-align: center;
     }
+
     .about-text {
         max-width: 100%;
     }
+
     .about-image {
         width: 70%;
         margin: 2rem auto 0;
         max-width: 450px;
     }
+
     .about-text {
         flex-basis: auto;
         order: 2;
         width: 100%;
     }
-     .about-image {
+
+    .about-image {
         flex-basis: auto;
         order: 1;
     }
+
     #portrait-img {
         width: 100%;
         max-width: 450px;
     }
-     #name-heading {
+
+    #name-heading {
         font-size: clamp(2rem, 10vw, 4rem);
         min-height: 2em;
         padding: 0.5em 0;
     }
+
     .subtitle {
         font-size: clamp(1rem, 4vw, 1.3rem);
     }
@@ -577,37 +596,45 @@ footer {
 
 
 @media (max-width: 768px) {
-     .main-content {
-         padding: 5rem 1rem 2rem;
-     }
-     .top-nav {
-         padding: 1rem 1.5rem;
-     }
-     .nav-links {
-         gap: 1.5rem;
-     }
-     .nav-links a {
-         font-size: 0.9rem;
-     }
+    .main-content {
+        padding: 5rem 1rem 2rem;
+    }
+
+    .top-nav {
+        padding: 1rem 1.5rem;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
 
     h2 {
         font-size: 2rem;
     }
+
     .contact-links a i {
-         font-size: 1.3rem;
+        font-size: 1.3rem;
     }
+
     .modal-content {
         width: 90%;
         padding: 20px;
     }
-     .about-image {
+
+    .about-image {
         width: 85%;
         max-width: 380px;
     }
+
     #portrait-img {
         width: 100%;
         max-width: 380px;
     }
+
     #name-heading {
         font-size: clamp(1.8rem, 12vw, 3rem);
         min-height: 1.8em;
@@ -619,61 +646,75 @@ footer {
     .main-content {
         padding: 4.5rem 1rem 2rem;
     }
+
     .top-nav {
         padding: 1rem;
     }
+
     .nav-links {
         gap: 1rem;
     }
+
     .nav-links a {
         font-size: 0.85rem;
     }
+
     #logo-img {
         height: 28px;
     }
+
     .contact-links {
-         display: flex;
-         flex-direction: column;
-         gap: 2rem;
-     }
-     .contact-links a {
-         margin: 0;
-     }
-     .contact-links a i {
-         font-size: 2.8rem;
-     }
-     .modal-content {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .contact-links a {
+        margin: 0;
+    }
+
+    .contact-links a i {
+        font-size: 2.8rem;
+    }
+
+    .modal-content {
         margin: 10% auto;
     }
-     .about-image {
+
+    .about-image {
         width: 90%;
         max-width: 320px;
     }
+
     #portrait-img {
         width: 100%;
         max-width: 320px;
     }
-     #name-heading {
+
+    #name-heading {
         font-size: clamp(1.6rem, 14vw, 2.5rem);
         min-height: 1.6em;
         padding: 0.3em 0;
         line-height: 1.2;
     }
-      .subtitle {
+
+    .subtitle {
         font-size: clamp(0.9rem, 3.5vw, 1.1rem);
     }
-     .about-description {
+
+    .about-description {
         font-size: 0.95rem;
     }
 }
 
 /* Add fade-in animation keyframes */
 @keyframes fadeIn {
-    from { 
+    from {
         opacity: 0;
         transform: translateY(20px);
     }
-    to { 
+
+    to {
         opacity: 1;
         transform: translateY(0);
     }
@@ -684,6 +725,7 @@ footer {
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);

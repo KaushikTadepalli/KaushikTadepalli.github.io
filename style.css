@@ -346,12 +346,13 @@ h2 {
     padding-bottom: 4rem;
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 0.8s forwards;
-    text-align: center;
+    text-align: left;
 }
 
 #contact h2 {
     margin-bottom: 2rem;
-    text-align: center;
+    text-align: left;
+    padding-left: 3rem;
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 0.9s forwards;
 }
@@ -359,7 +360,8 @@ h2 {
 .contact-links {
     display: flex;
     gap: 2rem;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 3rem;
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 1s forwards;
 }

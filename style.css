@@ -354,7 +354,7 @@ h2 {
 #contact h2 {
     margin-bottom: 2rem;
     text-align: left;
-    padding-left: 0;
+    padding-left: 8rem;
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 0.9s forwards;
 }
@@ -363,7 +363,7 @@ h2 {
     display: flex;
     gap: 2rem;
     justify-content: flex-start;
-    padding-left: 0;
+    padding-left: 8rem;
     opacity: 0;
     animation: fadeInUp 0.8s ease-out 1s forwards;
 }

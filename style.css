@@ -742,83 +742,52 @@ footer {
 .top-nav {
     opacity: 0;
     animation: fadeIn 0.8s ease-out 0.1s forwards;
-}
 
-/* Add fade-in for project cards */
+    .project-detail-content {
+        max-width: 800px;
+    }
 
-/* Add fade-in for footer */
-footer {
-    text-align: center;
-    margin-top: 2rem;
-    padding: 2rem 0;
-    border-top: 2px solid var(--border-color);
-    font-size: 0.9rem;
-    color: #888;
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: all 0.2s ease;
-}
+    .project-detail-image {
+        width: 100%;
+        max-width: 600px;
+        height: auto;
+        margin: 2rem 0;
+    }
 
-.back-btn:hover {
-    color: var(--active-color);
-    transform: translateX(-3px);
-}
+    .project-links {
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border-color);
+    }
 
-.back-btn i {
-    font-size: 0.9rem;
-}
+    .project-links a {
+        color: var(--active-color);
+        text-decoration: underline;
+        font-weight: 600;
+        margin-right: 2rem;
+        transition: color 0.2s ease;
+    }
 
-/* Project Detail Page */
-#project-detail {
-    padding-top: 6rem;
-}
+    .project-links a:hover {
+        color: var(--primary-color);
+    }
 
-.project-detail-content {
-    max-width: 800px;
-}
+    #project-detail h1 {
+        margin-bottom: 1rem;
+    }
 
-.project-detail-image {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    margin: 2rem 0;
-}
+    #project-detail p {
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+        font-size: 1.1rem;
+    }
 
-.project-links {
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border-color);
-}
+    #project-detail ul {
+        margin-bottom: 1.5rem;
+        margin-left: 2rem;
+    }
 
-.project-links a {
-    color: var(--active-color);
-    text-decoration: underline;
-    font-weight: 600;
-    margin-right: 2rem;
-    transition: color 0.2s ease;
-}
-
-.project-links a:hover {
-    color: var(--primary-color);
-}
-
-#project-detail h1 {
-    margin-bottom: 1rem;
-}
-
-#project-detail p {
-    margin-bottom: 1.5rem;
-    line-height: 1.8;
-    font-size: 1.1rem;
-}
-
-#project-detail ul {
-    margin-bottom: 1.5rem;
-    margin-left: 2rem;
-}
-
-#project-detail li {
-    margin-bottom: 0.8rem;
-    line-height: 1.6;
-}
+    #project-detail li {
+        margin-bottom: 0.8rem;
+        line-height: 1.6;
+    }

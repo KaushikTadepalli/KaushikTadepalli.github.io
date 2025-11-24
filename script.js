@@ -354,4 +354,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-}); // End DOMContentLoaded
+}); // End DOMContentLoaded    
+    // Additional check for projects page highlighting
+    const checkProjectsPageHighlight = () => {
+        const isProjectsPage = window.location.pathname.includes('projects.html') || 
+                               window.location.pathname.includes('/projects/');
+        const navLinks = document.querySelectorAll('.nav-links a');
+        
+        if (isProjectsPage) {
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                if (href === 'projects.html' || href === '../projects.html') {
+                    link.classList.add('active');
+                }
+            });
+        }
+    };
+
+    // Run on page load
+    checkProjectsPageHighlight();
+});

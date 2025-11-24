@@ -53,9 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Start animation after a short delay
         setTimeout(() => {
-             if (animationFrameId) cancelAnimationFrame(animationFrameId);
-             startTime = null;
-             animationFrameId = requestAnimationFrame(updateText);
+            if (animationFrameId) cancelAnimationFrame(animationFrameId);
+            startTime = null;
+            animationFrameId = requestAnimationFrame(updateText);
         }, 100);
 
     } else {
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Top Navigation Active State & Scrollspy ---
     const navLinks = document.querySelectorAll('.nav-links a');
     const sections = document.querySelectorAll('section[id]');
-    
+
     // Smooth scroll for navigation links
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
@@ -90,18 +90,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-    
+
     // Scrollspy - highlight active nav link based on scroll position
     function updateActiveNav() {
         if (sections.length === 0) return; // No sections on projects page
-        
+
         const scrollPosition = window.scrollY + 150; // Offset for better detection
         const windowHeight = window.innerHeight;
         const documentHeight = document.documentElement.scrollHeight;
         const isAtBottom = (windowHeight + window.scrollY) >= documentHeight - 50; // Check if at bottom
-        
+
         let activeSection = null;
-        
+
         // If at the bottom of the page, highlight the last section
         if (isAtBottom && sections.length > 0) {
             activeSection = sections[sections.length - 1].getAttribute('id');
@@ -111,18 +111,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 const sectionTop = section.offsetTop;
                 const sectionHeight = section.offsetHeight;
                 const sectionId = section.getAttribute('id');
-                
+
                 if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
                     activeSection = sectionId;
                 }
             });
         }
-        
+
         // If at top of page, default to about section
         if (window.scrollY < 100 && sections.length > 0) {
             activeSection = sections[0].getAttribute('id');
         }
-        
+
         // Update nav links
         navLinks.forEach(link => {
             link.classList.remove('active');
@@ -131,10 +131,10 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-    
+
     // Initial check
     updateActiveNav();
-    
+
     // Update on scroll (debounced)
     let scrollTimeout;
     window.addEventListener('scroll', () => {
@@ -262,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
         function openModal(projectId) {
             // Store current scroll position
             scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
-            
+
             const details = projectDetails[projectId];
             if (details) {
                 let linksHTML = '';
@@ -300,77 +300,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 modal.style.display = 'none';
                 document.body.style.overflow = '';
                 modalBody.innerHTML = '';
-                // Restore scroll position
-                window.scrollTo(0, scrollPosition);
-            }, 300); // Match the CSS transition duration
+            });
+            window.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && modal.classList.contains('visible')) closeModal();
+            });
+
+        } else {
+            console.warn("Modal elements or project card buttons not found. Modal functionality disabled.");
         }
 
-        // Add click listener to project items
-        const projectItems = document.querySelectorAll('.project-item');
-        projectItems.forEach(item => {
-            item.addEventListener('click', (event) => {
-                // Always prevent default navigation
-                event.preventDefault();
-                
-                if (item.dataset.projectId) {
-                    const projectId = item.dataset.projectId;
-                    const details = projectDetails[projectId];
-                    
-                    if (details) {
-                        // For proj2 (Inhibitor), always show modal
-                        if (projectId === 'proj2') {
-                            openModal(projectId);
-                        } else {
-                            // For other projects, try to go to live link first, then repo link, then modal
-                            if (details.liveLink && details.liveLink !== '#') {
-                                window.open(details.liveLink, '_blank', 'noopener,noreferrer');
-                            } else if (details.repoLink && details.repoLink !== '#') {
-                                window.open(details.repoLink, '_blank', 'noopener,noreferrer');
-                            } else {
-                                // Fallback to modal if no links available
-                                openModal(projectId);
-                            }
-                        }
-                    } else {
-                        console.error(`Project details not found for ID: ${projectId}`);
-                    }
-                } else {
-                     console.error("Could not find project ID on clicked item.");
-                }
-            });
-        });
 
-        // Add listeners to close the modal
-        closeModalBtn.addEventListener('click', closeModal);
-        modal.addEventListener('click', (event) => {
-            if (event.target === modal) closeModal();
-        });
-        window.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && modal.classList.contains('visible')) closeModal();
-        });
+    }); // End DOMContentLoaded    
+// Additional check for projects page highlighting
+const checkProjectsPageHighlight = () => {
+    const isProjectsPage = window.location.pathname.includes('projects.html') ||
+        window.location.pathname.includes('/projects/');
+    const navLinks = document.querySelectorAll('.nav-links a');
 
-    } else {
-         console.warn("Modal elements or project card buttons not found. Modal functionality disabled.");
+    if (isProjectsPage) {
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === 'projects.html' || href === '../projects.html') {
+                link.classList.add('active');
+            }
+        });
     }
+};
 
-
-}); // End DOMContentLoaded    
-    // Additional check for projects page highlighting
-    const checkProjectsPageHighlight = () => {
-        const isProjectsPage = window.location.pathname.includes('projects.html') || 
-                               window.location.pathname.includes('/projects/');
-        const navLinks = document.querySelectorAll('.nav-links a');
-        
-        if (isProjectsPage) {
-            navLinks.forEach(link => {
-                const href = link.getAttribute('href');
-                if (href === 'projects.html' || href === '../projects.html') {
-                    link.classList.add('active');
-                }
-            });
-        }
-    };
-
-    // Run on page load
-    checkProjectsPageHighlight();
+// Run on page load
+checkProjectsPageHighlight();
 });

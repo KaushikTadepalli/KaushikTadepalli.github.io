@@ -4,6 +4,39 @@
     flex-direction: column;
     gap: 5px;
     background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 101;
+}
+
+.hamburger span {
+    display: block;
+}
+
+.nav-links {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    flex-direction: column;
+    background-color: var(--card-bg);
+    width: 200px;
+    padding: 2rem;
+    gap: 1.5rem;
+    transition: right 0.3s ease;
+    border-left: 1px solid var(--border-color);
+    height: calc(100vh - 70px);
+}
+
+.nav-links.active {
+    right: 0;
+}
+}
+
+/* Back to Top Button */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
     right: 30px;
     width: 50px;
     height: 50px;
